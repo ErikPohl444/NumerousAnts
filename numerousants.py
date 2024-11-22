@@ -2,16 +2,17 @@ import time
 from operator import itemgetter
 from itertools import repeat
 
-class numerous_ants:
 
-    def __init__(self, control_widget, widgets , inputs, iterations):
+class NumerousAnts:
+
+    def __init__(self, control_widget, widgets, inputs, iterations):
         self.control_widget = control_widget
         self.widgets = widgets
         self.iterations = iterations
         self.results = []
         self.inputs = inputs
 
-    def perform(self,fun, *args):
+    def perform(self, fun, *args):
         return fun(*args)
 
     def formicate(self):
@@ -21,20 +22,16 @@ class numerous_ants:
             for k in self.inputs:
                 start = time.time()
                 for _ in repeat(None, self.iterations):
-                    z = self.perform(i[1],k)
+                    z = self.perform(i[1], k)
                 end = time.time()
-                if z ==self.perform(self.control_widget,k):
+                if z == self.perform(self.control_widget, k):
                     totaltime += end-start
                 else:
-                    totaltime = -1 ## this is a problem
+                    totaltime = -1  # this is a problem
                     break
             self.results.append(totaltime)
 
-
     def resultput(self):
-        l = [(self.widgets[i][0], self.results[i], self.results[i]/sum(self.results)*100) for i,j in enumerate(self.results)]
+        l = [(self.widgets[i][0], self.results[i], self.results[i]/sum(self.results)*100) for i, j in enumerate(self.results)]
         for j in sorted(l, key=itemgetter(1)):
             print(j)
-
-
-

@@ -1,4 +1,4 @@
-from numerous_ants_async import numerous_ants
+from numerous_ants_async import numerousants
 
 answer1 = 'x'
 answer2 = 'yes'

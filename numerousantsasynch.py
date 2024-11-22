@@ -5,7 +5,8 @@ from multiprocessing import Pool
 from contextlib import redirect_stdout
 import io
 
-class numerous_ants:
+
+class NumerousAntsAsynch:
     '''Compare a list of functions asynchronously to find the fastest
     one which behaves exactly like one designated the control (the queen)'''
 
@@ -27,7 +28,7 @@ class numerous_ants:
         with redirect_stdout(redirect_here):
             start = time.time()
             for _ in repeat(None, iterations):
-                    output = function(*args)
+                output = function(*args)
             end = time.time()
         return (output, end - start)
 
@@ -42,7 +43,7 @@ class numerous_ants:
         (a control algorithm) and time the runtime of the rest
         to find the fastest'''
         self.results = []
-        control_results = {this_input:self.perform(
+        control_results = {this_input: self.perform(
                     1,
                     self.queen,
                     this_input
