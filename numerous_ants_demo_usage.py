@@ -1,4 +1,4 @@
-from numerous_ants_async import numerousants
+from numerousantsasynch import NumerousAntsAsynch
 
 answer1 = 'x'
 answer2 = 'yes'
@@ -83,6 +83,6 @@ if __name__ == "__main__":
         ('trial9', trial9)
     ]
     inputs = [answer1, answer2, answer3]
-    anthill = numerous_ants(trial1, algorithms, inputs, 20000000)
+    anthill = NumerousAntsAsynch(trial1, algorithms, inputs, 20000000)
     anthill.formicate()
     anthill.resultput()
