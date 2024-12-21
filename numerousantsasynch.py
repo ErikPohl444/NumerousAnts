@@ -26,10 +26,10 @@ class NumerousAntsAsynch:
         '''Execute a function for a number of iterations with given arguments'''
         redirect_here = io.StringIO()
         with redirect_stdout(redirect_here):
-            start = time.time()
+            start = time.perf_counter()
             for _ in repeat(None, iterations):
                 output = function(*args)
-            end = time.time()
+            end = time.perf_counter()
         return (output, end - start)
 
     def log_result(self, result_value):

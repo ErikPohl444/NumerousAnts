@@ -20,10 +20,10 @@ class NumerousAnts:
         for i in self.widgets:
             totaltime = 0
             for k in self.inputs:
-                start = time.time()
+                start = time.perf_counter()
                 for _ in repeat(None, self.iterations):
                     z = self.perform(i[1], k)
-                end = time.time()
+                end = time.perf_counter()
                 if z == self.perform(self.control_widget, k):
                     totaltime += end-start
                 else:
