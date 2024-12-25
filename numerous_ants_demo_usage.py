@@ -6,31 +6,31 @@ answer3 = 'no'
 
 
 def trial1(answer):
-        if not (answer == 'yes' or answer == 'no'):
-            return True
-        else:
-            return False
+    if not (answer == 'yes' or answer == 'no'):
+        return True
+    else:
+        return False
 
 
 def trial2(answer):
-        if answer not in ('yes', 'no'):
-            return True
-        else:
-            return False
+    if answer not in ('yes', 'no'):
+        return True
+    else:
+        return False
 
 
 def trial3(answer):
-        if answer not in ['yes', 'no']:
-            return True
-        else:
-            return False
+    if answer not in ['yes', 'no']:
+        return True
+    else:
+        return False
 
 
 def trial4(answer):
-        if answer not in {'yes', 'no'}:
-            return True
-        else:
-            return False
+    if answer not in {'yes', 'no'}:
+        return True
+    else:
+        return False
 
 
 def trial5(answer):
@@ -52,7 +52,7 @@ def trial7(answer):
     try:
         dd[answer]
         return False
-    except:
+    except KeyError:
         return True
 
 

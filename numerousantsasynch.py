@@ -7,8 +7,8 @@ import io
 
 
 class NumerousAntsAsynch:
-    '''Compare a list of functions asynchronously to find the fastest
-    one which behaves exactly like one designated the control (the queen)'''
+    """Compare a list of functions asynchronously to find the fastest
+    one which behaves exactly like one designated the control (the queen)"""
 
     def __init__(self, queen, ants, inputs, iterations):
         self.queen = queen
@@ -23,25 +23,25 @@ class NumerousAntsAsynch:
             function,
             *args
     ):
-        '''Execute a function for a number of iterations with given arguments'''
+        """Execute a function for a number of iterations with given arguments"""
         redirect_here = io.StringIO()
         with redirect_stdout(redirect_here):
             start = time.perf_counter()
             for _ in repeat(None, iterations):
                 output = function(*args)
             end = time.perf_counter()
-        return (output, end - start)
+        return output, end - start
 
     def log_result(self, result_value):
-        '''log result currently does nothing, but could later track results'''
+        """log result currently does nothing, but could later track results"""
         pass
 
     def formicate(self):
-        '''for a series of algorithms run them asynchronously
+        """for a series of algorithms run them asynchronously
         for a series of inputs--
         get rid of any which do not behave the same as the queen 
         (a control algorithm) and time the runtime of the rest
-        to find the fastest'''
+        to find the fastest"""
         self.results = []
         control_results = {this_input: self.perform(
                     1,
@@ -71,7 +71,7 @@ class NumerousAntsAsynch:
             self.results.append(total_time)
 
     def resultput(self):
-        '''output the results of an anthill formication'''
+        """output the results of an anthill formication"""
         valid_result_tuples = [
             (
                 self.ants[result_counter][0],

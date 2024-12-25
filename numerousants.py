@@ -32,6 +32,10 @@ class NumerousAnts:
             self.results.append(totaltime)
 
     def resultput(self):
-        l = [(self.widgets[i][0], self.results[i], self.results[i]/sum(self.results)*100) for i, j in enumerate(self.results)]
+        l = [
+            (
+                self.widgets[i][0], self.results[i], self.results[i]/sum(self.results)*100
+            ) for i, j in enumerate(self.results)
+        ]
         for j in sorted(l, key=itemgetter(1)):
             print(j)
